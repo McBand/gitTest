@@ -1,0 +1,1 @@
+$('#myHeader h1').html('some staff');
