@@ -1,5 +1,7 @@
+$(function(){
 
-$('#Ass').click(function() {
-    var value = $('#impName').val();
-    $('ul').append('<li>'+value+'</li>');
+    $('#Ass').on('mouseover', function() {
+        $('#PanelHide').slideToggle(300);
+    });
+
 });
