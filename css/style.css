@@ -1,25 +1,24 @@
-.myPanel{
-	margin: 3%;
-	border: 1px solid #678791;
-	border-radius: 5px 5px 0 0;
-	box-shadow: 10px 10px 10px black;
+#slider {
+    width: 1000px;
+    height: auto;
+    overflow: hidden;
 }
 
-.myPanel .heading {
-	background: #90CCE0;
-	padding: 10px 20px ;
-	color: #678791;
-	border-radius: 5px 5px 0 0;
+#slider .slides {
+    display: block;
+    width: 15000px;
+    height: auto;
+    margin: 0;
+    padding: 0;
 }
-.myPanel .body{
-	padding: 10px 20px;
+
+#slider .slide {
+    float: left;
+    list-style-type: none;
+    width: 1000px;
+    height: auto;
 }
-.smyPanel .showOnHover {
-	display: none;
-}
-.myPanel:hover{
-	box-shadow: 0px 0px 8px black;
-}
-.myPanel:hover .showOnHover{
-	display: inline-block;
+img{
+	width: 1000px;
+    height: auto;
 }
