@@ -52,26 +52,21 @@ function pauseSlider(){
     const $name = $('#name');
     const $age = $('#age');
     const $friends = $('#friends');
-    
-    
-    const friendTemp = `
-    <div id="li-item">
-    <li>
-    <strong> Name: </strong> ${friend.name} <strong> Age: </strong> ${friend.age} 
-    </li> 
-    <button data-id="" class="btn btn-danger" id="remove">Delete</button>
-    </div>
-    `;
 
-    function addFriend (friendTemp){
-        $friends.append(friendTemp);
+
+    const friendTemp = $('#friend-template').html();
+
+
+
+
+    function addFriend (friend){
+        $friends.append(Mustache.render(friendTemp, friend));
     }
    
 $.ajax({
   type: 'GET',
   url: 'http://rest.learncode.academy/api/johnbob/friends',
   success: function(friends) {
-
       $.each(friends, function(i, friend){
           addFriend(friend);
       });
@@ -110,12 +105,14 @@ $('#add-friend').on('click', function(){
 
 $friends.delegate('#remove', 'click', function(){
     
-    let $li = $(this).closest('li');
+    let $div = $(this).closest('div');
     $.ajax({
   type: 'DELETE',
-  url: 'http://rest.learncode.academy/api/johnbob/friends/'+$(this).attr('data-id'), 
+  url: 'http://rest.learncode.academy/api/johnbob/friends/'+ $(this).attr('data-id'), 
   success: function() {
-    $li.remove();
+    $div.fadeOut(10, function(){
+        $(this).remove();
+    });
   }
 });
 });

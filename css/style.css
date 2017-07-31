@@ -71,3 +71,15 @@ img{
     box-shadow: 0 0 10px saddlebrown;
     margin: 10px;
 }
+
+ul li .edit {
+    display: none;
+}
+
+ul li.edit .edit{
+    display: initial;
+}
+
+ul li.edit .noedit {
+    display: none;
+}

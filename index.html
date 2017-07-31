@@ -100,6 +100,26 @@
 	
 	<div class="container">
 		<ul id="friends"></ul>
+		<template id="friend-template">
+			<div id="li-item">
+    			<li>
+					<p>
+						<strong> Name: </strong> 
+						<span class="noedit">{{name}} </span>
+						<input class="edit name"/>
+					</p>
+					<p>
+						<strong> Age: </strong> 
+						<span class="noedit">{{age}} </span>
+						<input class="edit age"/>
+					</p>
+					<button data-id="{{id}}" class="btn btn-danger" id="remove">Delete</button>
+					<button class="editFriend edit btn btn-primary">Edit</button>
+					<button class="cancelEdit edit btn btn-default">Cancel</button>
+					<button class="saveEdit edit btn btn-success">Save</button>
+    			</li> 
+   		 </div>
+		</template>
 
 	<h4>Add a friend</h4>
 	<p>name: <input type="text" id="name"></p>
@@ -117,6 +137,7 @@
   	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
  	 crossorigin="anonymous"></script>
 	<script src="css/js.js"></script>
+	<script src="css/mustache.js"></script>
 	
 	
  </body>
